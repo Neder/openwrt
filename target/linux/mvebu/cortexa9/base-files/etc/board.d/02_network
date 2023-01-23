@@ -22,6 +22,10 @@ mvebu_setup_interfaces()
 		ucidef_set_interface_lan "eth0 eth1" "dhcp"
 		;;
 	linksys,wrt1200ac|\
+		ucidef_set_interfaces_lan_wan "lan.1" "wan.2"
+		ucidef_add_switch "switch0" \
+			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "5@lan" "4:wan" "6@wan"
+		;;
 	linksys,wrt1900ac-v1|\
 	linksys,wrt1900ac-v2|\
 	linksys,wrt1900acs|\
